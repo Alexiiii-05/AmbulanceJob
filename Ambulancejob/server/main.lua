@@ -326,7 +326,6 @@ end)
 
 RegisterServerEvent('EMS:Fermer')
 AddEventHandler('EMS:Fermer', function()
-    local _source = source
     local xPlayer = ESX.GetPlayerFromId(_source)
     local xPlayers    = ESX.GetPlayers()
     for i=1, #xPlayers, 1 do
@@ -336,7 +335,7 @@ AddEventHandler('EMS:Fermer', function()
 end)
 
 
-ESX.RegisterServerCallback('nehco_ems:afficheappels', function(source, cb, plate)
+ESX.RegisterServerCallback('ems:afficheappels', function(source, cb, plate)
     local xPlayer = ESX.GetPlayerFromId(source)
     local keys = {}
 
@@ -356,8 +355,8 @@ ESX.RegisterServerCallback('nehco_ems:afficheappels', function(source, cb, plate
     end)
 end)
 
-RegisterServerEvent('nehco_ems:ajoutappels')
-AddEventHandler('nehco_ems:ajoutappels', function(typereport, reporteur, nomreporter, raison)
+RegisterServerEvent('ems:ajoutappels')
+AddEventHandler('ems:ajoutappels', function(typereport, reporteur, nomreporter, raison)
     MySQL.Async.execute('INSERT INTO appels_ems (type, reporteur, nomreporter, raison) VALUES (@type, @reporteur, @nomreporter, @raison)', {
         ['@type'] = typereport,
         ['@reporteur'] = reporteur,
@@ -366,8 +365,8 @@ AddEventHandler('nehco_ems:ajoutappels', function(typereport, reporteur, nomrepo
     })
 end)
 
-RegisterServerEvent('nehco_ems:supprimeappels')
-AddEventHandler('nehco_ems:supprimeappels', function(supprimer)
+RegisterServerEvent('ems:supprimeappels')
+AddEventHandler('ems:supprimeappels', function(supprimer)
     MySQL.Async.execute('DELETE FROM appels_ems WHERE id = @id', {
             ['@id'] = supprimer
     })
