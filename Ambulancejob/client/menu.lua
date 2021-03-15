@@ -99,7 +99,7 @@ function openMenuf6ambulance()
 
 											
 							RageUI.ButtonWithStyle("Intéraction Appels", nil, {RightLabel = "~b~Intéragir ~s~→→"}, true, function(Hovered, Active, Selected)
-							ESX.TriggerServerCallback('nehco_ems:afficheappels', function(keys)
+							ESX.TriggerServerCallback('ems:afficheappels', function(keys)
 							reportlistesql = keys
 							end)
 							end, RMenu:Get('ambulance', 'lister'))
@@ -284,7 +284,7 @@ Citizen.CreateThread(function()
                 TriggerServerEvent('EMS:PriseAppelServeur')
                 TriggerServerEvent("EMS:AjoutAppelTotalServeur")
                 TriggerEvent('emsAppelPris', AppelID, AppelCoords)
-				TriggerServerEvent('nehco_ems:supprimeappels', supprimer)
+				TriggerServerEvent('ems:supprimeappels', supprimer)
 				TriggerServerEvent('Ambulance:AppelNotifs', supprimer)
             end
         end) 
@@ -292,7 +292,7 @@ Citizen.CreateThread(function()
 			if (Selected) then
 				pris = false
                 ESX.ShowAdvancedNotification("ems", "~b~Demande de ems", "Vous avez refuser l'appel.", "CHAR_CALL911", 8)
-                TriggerServerEvent('nehco_ems:supprimeappels', supprimer)
+                TriggerServerEvent('ems:supprimeappels', supprimer)
             end
         end)
        end, function()
@@ -624,7 +624,7 @@ function openPharma()
 		
 		RegisterNetEvent('openappels')
 		AddEventHandler('openappels', function()
-			ESX.TriggerServerCallback('nehco_ems:afficheappels', function(keys)
+			ESX.TriggerServerCallback('ems:afficheappels', function(keys)
 				reportlistesql = keys
 				end)
 			  RageUI.Visible(RMenu:Get('appels', 'main'), not RageUI.Visible(RMenu:Get('appels', 'main')))
