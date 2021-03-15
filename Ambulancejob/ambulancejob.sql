@@ -31,6 +31,19 @@ ALTER TABLE `users`
 ;
 
 --
+-- Structure de la table `appels_ems`
+--
+
+CREATE TABLE `appels_ems` (
+  `id` int(11) NOT NULL,
+  `type` varchar(255) NOT NULL,
+  `reporteur` varchar(255) DEFAULT NULL,
+  `nomreporter` varchar(255) DEFAULT NULL,
+  `raison` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+--
 -- AUTO_INCREMENT pour la table `appels_ems`
 --
 ALTER TABLE `appels_ems`
