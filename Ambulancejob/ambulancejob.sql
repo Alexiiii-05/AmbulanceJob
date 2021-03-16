@@ -42,14 +42,6 @@ CREATE TABLE `appels_ems` (
   `raison` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-
---
--- AUTO_INCREMENT pour la table `appels_ems`
---
-ALTER TABLE `appels_ems`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=240;
-
-
 --
 -- Index pour la table `appels_ems`
 --
