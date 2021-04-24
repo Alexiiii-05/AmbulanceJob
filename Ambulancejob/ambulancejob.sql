@@ -34,16 +34,17 @@ ALTER TABLE `users`
 -- Structure de la table `appels_ems`
 --
 
-CREATE TABLE `appels_ems` (
+CREATE TABLE `appels-ems` (
   `id` int(11) NOT NULL,
-  `type` varchar(255) NOT NULL,
+  `type` varchar(255) DEFAULT NULL,
   `reporteur` varchar(255) DEFAULT NULL,
-  `nomreporter` varchar(255) DEFAULT NULL,
-  `raison` varchar(255) DEFAULT NULL
+  `nomreporteur` varchar(255) DEFAULT NULL,
+  `raison` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Index pour la table `appels_ems`
---
-ALTER TABLE `appels_ems`
-  ADD PRIMARY KEY (`id`) USING BTREE;
+
+ALTER TABLE `appels-ems`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `appels-ems`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
