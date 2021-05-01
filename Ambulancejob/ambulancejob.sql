@@ -38,7 +38,7 @@ CREATE TABLE `appels-ems` (
   `id` int(11) NOT NULL,
   `type` varchar(255) DEFAULT NULL,
   `reporteur` varchar(255) DEFAULT NULL,
-  `nomreporteur` varchar(255) DEFAULT NULL,
+  `nomreporter` varchar(255) DEFAULT NULL,
   `raison` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
