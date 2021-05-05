@@ -34,7 +34,7 @@ ALTER TABLE `users`
 -- Structure de la table `appels_ems`
 --
 
-CREATE TABLE `appels-ems` (
+CREATE TABLE `appels_ems` (
   `id` int(11) NOT NULL,
   `type` varchar(255) DEFAULT NULL,
   `reporteur` varchar(255) DEFAULT NULL,
@@ -43,8 +43,8 @@ CREATE TABLE `appels-ems` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
-ALTER TABLE `appels-ems`
+ALTER TABLE `appels_ems`
   ADD PRIMARY KEY (`id`);
 
-ALTER TABLE `appels-ems`
+ALTER TABLE `appels_ems`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
